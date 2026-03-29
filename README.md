@@ -1,4 +1,7 @@
 Click ⭐if you like the project. Pull Requests are highly appreciated. We can connect on [@PraveenKumar](https://www.linkedin.com/in/praveen-kumar-tadipalli)
+
+### Table of Contents
+
 | No. | Questions |
 |-----|----------|
 | 1 | [Find list of employees whose name starts with alphabet A](#q1) |
@@ -17,6 +20,7 @@ Click ⭐if you like the project. Pull Requests are highly appreciated. We can c
 | 14 | [Find the list of employee and sort them by their salary](#q14) |
 | 15 | [Find the employee who has second highest salary](#q15) |
 
+**[⬆ Back to Top](#table-of-contents)**
 <a name="q1"></a>
 ### 1. Find list of employees whose name starts with alphabet A
 
@@ -25,18 +29,21 @@ Click ⭐if you like the project. Pull Requests are highly appreciated. We can c
                 .filter(emp -> emp.getName().startsWith("A"))
                 .toList();
 ```
+**[⬆ Back to Top](#table-of-contents)**
 <a name="q2"></a>
 ### 2. Group The employees By Department Names
 ```java
 Map<String, List<Employees>> deptGroup = employees.stream()
                 .collect(Collectors.groupingBy(emp -> emp.getDepartNames()));
 ```
+**[⬆ Back to Top](#table-of-contents)**
 <a name="q3"></a>
 ### 3. Find the total count of employees using stream
 ```java
 long count = employees.stream()
                 .count();
 ```
+**[⬆ Back to Top](#table-of-contents)**
 <a name="q4"></a>
 ### 4. Find the max age of employees
 ```java
@@ -44,6 +51,7 @@ long count = employees.stream()
                 .mapToInt(emp -> emp.getAge())
                 .max().getAsInt();
 ```
+**[⬆ Back to Top](#table-of-contents)**
 <a name="q5"></a>
 ### 5. Find all department names
 ```java
@@ -51,12 +59,14 @@ List<String> deptNames = employees.stream()
                 .map(Employees::getDepartNames)
                 .toList();
 ```
+**[⬆ Back to Top](#table-of-contents)**
 <a name="q6"></a>
 ### 6. Find the count of employee in each department
 ```java
  Map<String, Long> empDeptCount = employees.stream()
                 .collect(Collectors.groupingBy(Employees::getDepartNames, Collectors.counting()));
 ```
+**[⬆ Back to Top](#table-of-contents)**
 <a name="q7"></a>
 ### 7. Find the list of employees whose age is less than 30
 ```java
@@ -64,6 +74,7 @@ List<Employees> employeesLessThanAge30 = employees.stream()
                 .filter(emp -> emp.getAge() < 30)
                 .toList();
 ```
+**[⬆ Back to Top](#table-of-contents)**
 <a name="q8"></a>
 ### 8. Find the list of employees whose age is in between 26 and 31
 ```java
@@ -71,12 +82,14 @@ List<Employees> emplyeesAgeGreaterThanAndLessThan26And31 = employees.stream()
                 .filter(emp -> emp.getAge() > 26 && emp.getAge() < 31)
                 .toList();
 ```
+**[⬆ Back to Top](#table-of-contents)**
 <a name="q9"></a>
 ### 9. Find the average age of male and female employee
 ```java
 Map<String, Double> avgOfEmployeesBasedOnGender = employees.stream()
                 .collect(Collectors.groupingBy(Employees::getGender, Collectors.averagingInt(Employees::getAge)));
 ```
+**[⬆ Back to Top](#table-of-contents)**
 <a name="q10"></a>
 ### 10. Find the department who is having maximum number of employee
 ```java
@@ -87,6 +100,7 @@ Map<String, Double> avgOfEmployeesBasedOnGender = employees.stream()
                 .max(Map.Entry.comparingByValue())
                 .get();
 ```
+**[⬆ Back to Top](#table-of-contents)**
 <a name="q11"></a>
 ### 11. Find the Employee who stays in Delhi and sort them by their names
 ```java
@@ -95,18 +109,21 @@ List<Employees> employeesStayingInDelhi = employees.stream()
                 .sorted(Comparator.comparing(Employees::getName))
                 .toList();
 ```
+**[⬆ Back to Top](#table-of-contents)**
 <a name="q12"></a>
 ### 12. Find the average salary in all departments
 ```java
  Map<String, Double> avgSalaryOfEachDept = employees.stream()
                 .collect(Collectors.groupingBy(Employees::getDepartNames, Collectors.averagingDouble(Employees::getSalary)));
 ```
+**[⬆ Back to Top](#table-of-contents)**
 <a name="q13"></a>
 ### 13. Find the highest salary in each department
 ```java
 Map<String, Optional<Employees>> highestSalaryInEachDept = employees.stream()
                 .collect(Collectors.groupingBy(Employees::getDepartNames, Collectors.maxBy(Comparator.comparingDouble(Employees::getSalary))));
 ```
+**[⬆ Back to Top](#table-of-contents)**
 <a name="q14"></a>
 ### 14. Find the list of employee and sort them by their salary
 ```java
@@ -114,6 +131,7 @@ List<Employees> employeesSortedBySalary = employees.stream()
                 .sorted(Comparator.comparing(Employees::getSalary))
                 .toList();
 ```
+**[⬆ Back to Top](#table-of-contents)**
 <a name="q15"></a>
 ### 15. Find the employee who has second lowest salary
 ```java
