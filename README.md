@@ -1,7 +1,7 @@
 Click ⭐if you like the project. Pull Requests are highly appreciated. We can connect on [@PraveenKumar](https://www.linkedin.com/in/praveen-kumar-tadipalli)
 | No. | Questions |
 |-----|----------|
-| 1 | [Find list of employees whose name starts with alphabet A](#find-list-of-employees-whose-name-starts-with-alphabet-a) |
+| 1 | [Find list of employees whose name starts with alphabet A](#q1) |
 | 2 | [Group The employees By Department Names](#group-the-employees-by-department-names) |
 | 3 | [Find the total count of employees using stream](#find-the-total-count-of-employees-using-stream) |
 | 4 | [Find the max age of employees](#find-the-max-age-of-employees) |
@@ -15,8 +15,9 @@ Click ⭐if you like the project. Pull Requests are highly appreciated. We can c
 | 12 | [Find the average salary in all departments](#find-the-average-salary-in-all-departments) |
 | 13 | [Find the highest salary in each department](#find-the-highest-salary-in-each-department) |
 | 14 | [Find the list of employee and sort them by their salary](#find-the-list-of-employee-and-sort-them-by-their-salary) |
-| 15 | [Find the employee who has second highest salary](#find-the-employee-who-has-second-highest-salary) |
+| 15 | [Find the employee who has second highest salary](#q15) |
 
+<a name="q1"></a>
 ### Find list of employees whose name starts with alphabet A
 
 ```java
@@ -101,6 +102,7 @@ List<Employees> employeesSortedBySalary = employees.stream()
                 .sorted(Comparator.comparing(Employees::getSalary))
                 .toList();
 ```
+<a name="q15"></a>
 ###  Find the employee who has second lowest salary
 ```java
 Employees secondLowestSalaryEmp = employees.stream()
