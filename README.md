@@ -17,7 +17,7 @@ Click ⭐if you like the project. Pull Requests are highly appreciated. We can c
 | 14 | [Find the list of employee and sort them by their salary](#find-the-list-of-employee-and-sort-them-by-their-salary) |
 | 15 | [Find the employee who has second highest salary](#find-the-employee-who-has-second-highest-salary) |
 
-### 1. Find list of employees whose name starts with alphabet A
+## 1. Find list of employees whose name starts with alphabet A
 
 ```java
  List<Employees> aEmployee = employees.stream()
