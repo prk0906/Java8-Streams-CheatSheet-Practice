@@ -1,14 +1,25 @@
-
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        int[] array = {1,2,1,2,5,8};
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        int min = Arrays.stream(array)
+                .min()
+                .getAsInt();
+
+        int max = Arrays.stream(array)
+                .max().getAsInt();
+
+        Set<Integer> set = Arrays.stream(array)
+                .boxed()
+                .collect(Collectors.toSet());
+
+        List<Integer> missingNumbers = IntStream.rangeClosed(min, max)
+                .boxed()
+                .filter(i -> !set.contains(i))
+                .toList();
+        System.out.println("Missing numbers in the array:"+missingNumbers);
     }
 }
